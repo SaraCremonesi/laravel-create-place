@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/students', 'StudentsController@index');
+Route::get('/students', 'StudentsController@index')->name('students');
+
+Route::get('/students-handlebars', 'StudentsController@handlebars')->name('handlebars');
