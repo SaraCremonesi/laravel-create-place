@@ -16,7 +16,7 @@
     <ul>
       <li>Nome: @{{ nome }}</li>
       <li>Cognome: @{{ cognome }}</li>
-      <li>Voto: @{{ media }}</li>
+      <li>Media: @{{ media }}</li>
     </ul>
   </script>
 
