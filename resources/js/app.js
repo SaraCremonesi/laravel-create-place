@@ -1,29 +1,34 @@
 require('./bootstrap');
-
 var $ = require('jquery');
+var Handlebars = require("handlebars");
 
-const Handlebars = require("handlebars");
-
+// Inizio del documento
 $(document).ready(function() {
+
   $.ajax(
     {
-      url: 'http://127.0.0.1:8000/api/students',
-      method: 'GET',
-      success: function(dataResponse) {
-        var students = dataResponse.students;
+      url: "http://127.0.0.1:8000/api/api-students",
+      method: "GET",
+      success: function (data) {
 
-        var source = $('#student-template').html();
+        var arrayStudents = data.students;
+
+        var source = $('#students-template').html();
         var template = Handlebars.compile(source);
 
-        for (var i = 0; i < students.length; i++) {
-          var thisStudent = students[i];
-          var html = template(thisStudents);
+        for (var i = 0; i < arrayStudents.length; i++) {
+
+          var oneStudent = arrayStudents[i];
+
+          var html = template(oneStudent);
+
           $('#students-list').append(html);
         }
       },
-      error: function() {
-        alert('error');
+      error: function (richiesta, stato, errore) {
+        alert("E' avvenuto un errore. " + errore);
       }
     }
   );
+
 });

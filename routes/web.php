@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
+})->name('welcome');
+
+Route::get('/students', 'StudentController@index' )->name('students');
+
+Route::get('/students-handlebars', function () {
+    return view('students-handlebars');
 });
-
-Route::get('/students', 'StudentsController@index')->name('students');
-
-Route::get('/students-handlebars', 'StudentsController@handlebars')->name('handlebars');

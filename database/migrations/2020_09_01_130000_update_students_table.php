@@ -13,9 +13,9 @@ class UpdateStudentsTable extends Migration
      */
     public function up()
     {
-      Schema::table('students', function (Blueprint $table) {
-        $table->float('media', 2, 1)->change();
-      });
+        Schema::table('students', function (Blueprint $table) {
+            $table->float('media', 2, 1);
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class UpdateStudentsTable extends Migration
      */
     public function down()
     {
-      Schema::table('students', function (Blueprint $table) {
-        $table->dropColumn('media');
-      });
+        Schema::table('students', function (Blueprint $table) {
+            $table->dropColumn('media');
+        });
     }
 }

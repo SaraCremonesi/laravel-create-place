@@ -10,6 +10,6 @@ class Students extends Model
   protected $fillable = [
     'nome',
     'cognome',
-    'voto'
+    'media'
   ];
 }

@@ -17,7 +17,6 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('cognome');
-            $table->float('media', 2, 2);
             $table->timestamps();
         });
     }
