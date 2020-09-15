@@ -26,7 +26,7 @@ $(document).ready(function() {
         }
       },
       error: function (richiesta, stato, errore) {
-        alert("E' avvenuto un errore. " + errore);
+        alert('Errore' errore);
       }
     }
   );

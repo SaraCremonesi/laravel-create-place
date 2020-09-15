@@ -11,6 +11,6 @@ class StudentController extends Controller
     public function index() {
       $students = Student::all();
 
-      return response()->json(compact('students-handlebars'));
+      return response()->json(compact($students));
     }
 }
